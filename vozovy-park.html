@@ -80,7 +80,8 @@
     .fleet-img { position: relative; overflow: hidden; min-height: 460px; }
     .fleet-img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .7s; }
     .fleet-img:hover img { transform: scale(1.04); }
-    .fleet-img-ph { position: absolute; inset: 0; background: var(--ink2); display: flex; align-items: center; justify-content: center; font-size: 5rem; }
+    .fleet-img-ph { position: absolute; inset: 0; background: var(--ink2); display: flex; align-items: center; justify-content: center; font-size: 5rem; z-index: 0; }
+    .fleet-img img { z-index: 1; }
     .fleet-img::after { content: ''; position: absolute; top: 0; right: 0; bottom: 0; width: 4px; background: var(--y); }
     .fleet-txt { padding: 5.5rem 5vw; display: flex; flex-direction: column; justify-content: center; border-left: 2px solid var(--ink); border-top: 2px solid var(--ink); border-bottom: 2px solid var(--ink); }
     .fleet-txt .sh { color: var(--ink); }
@@ -94,7 +95,8 @@
     .vcard-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s; }
     .vcard:hover .vcard-img img { transform: scale(1.05); }
     .vcard-img::after { content: ''; position: absolute; bottom: 0; inset-inline: 0; height: 3px; background: var(--y); }
-    .vcard-img-ph { position: absolute; inset: 0; background: rgba(255,255,255,.04); display: flex; align-items: center; justify-content: center; font-size: 4rem; }
+    .vcard-img-ph { position: absolute; inset: 0; background: rgba(255,255,255,.04); display: flex; align-items: center; justify-content: center; font-size: 4rem; z-index: 0; }
+    .vcard-img img { z-index: 1; }
     .vcard-body { padding: 2rem 2rem 2.2rem; }
     .vcard-badge { font-family: var(--fb); font-weight: 700; font-size: .64rem; letter-spacing: .22em; text-transform: uppercase; color: var(--y); margin-bottom: .6rem; display: block; }
     .vcard-body h3 { font-family: var(--fh); font-size: 1.7rem; color: var(--c); margin-bottom: 1.1rem; }

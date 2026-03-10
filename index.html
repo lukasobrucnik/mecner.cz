@@ -123,7 +123,8 @@
     .onas-img { position: relative; overflow: hidden; min-height: 480px; }
     .onas-img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .7s; }
     .onas-img:hover img { transform: scale(1.04); }
-    .onas-img-ph { position: absolute; inset: 0; background: var(--stone); display: flex; align-items: center; justify-content: center; font-size: 4rem; }
+    .onas-img-ph { position: absolute; inset: 0; background: var(--stone); display: flex; align-items: center; justify-content: center; font-size: 4rem; z-index: 0; }
+    .onas-img img { z-index: 1; }
     .onas-img::after { content: ''; position: absolute; top: 0; right: 0; bottom: 0; width: 4px; background: var(--y); }
     .onas-txt { padding: 5.5rem 5vw; display: flex; flex-direction: column; justify-content: center; border-left: 2px solid var(--ink); border-top: 2px solid var(--ink); border-bottom: 2px solid var(--ink); }
     .onas-txt .sh { color: var(--ink); }
@@ -142,7 +143,8 @@
     .partner-block .pn { font-family: var(--fh); font-size: 2.5rem; color: var(--ink); line-height: 1; }
     .moto-img { position: relative; aspect-ratio: 4/3; overflow: hidden; border: 2px solid var(--ink); box-shadow: 8px 8px 0 rgba(0,0,0,.15); }
     .moto-img img { width: 100%; height: 100%; object-fit: cover; }
-    .moto-img-ph { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-size: 4rem; background: rgba(0,0,0,.08); }
+    .moto-img-ph { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-size: 4rem; background: rgba(0,0,0,.08); z-index: 0; }
+    .moto-img img { position: relative; z-index: 1; }
     /* RESPONSIVE */
     @media(max-width:960px) { .hero{grid-template-columns:1fr;} .hero-l{border-right:none;} .hero-r{min-height:300px;} .stats{grid-template-columns:repeat(2,1fr);} .srv-grid{grid-template-columns:1fr;} .srv-card{border-right:none;border-bottom:1px solid rgba(255,255,255,.07);} .srv-card:last-child{border-bottom:none;} #onas{grid-template-columns:1fr;} .onas-img{min-height:280px;} .onas-img::after{display:none;} .onas-txt{border-left:none;border-top:2px solid var(--ink);} .moto-inner{grid-template-columns:1fr;} }
     @media(max-width:680px) { .stats{grid-template-columns:repeat(2,1fr);} }
