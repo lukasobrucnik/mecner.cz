@@ -102,7 +102,7 @@
     .vcard { background: var(--ink2); padding: 0; overflow: hidden; transition: transform .25s, box-shadow .25s; }
     .vcard:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,.35); }
     .vcard-img { position: relative; aspect-ratio: 16/10; overflow: hidden; }
-    .vcard-img-ph { position: absolute; inset: 0; background: rgba(30,30,28,.85); display: flex; align-items: center; justify-content: center; font-size: 4rem; z-index: 0; }
+    .vcard-img-ph { position: absolute; inset: 0; background: rgba(30,30,28,.85); display: none; align-items: center; justify-content: center; font-size: 4rem; z-index: 0; }
     .vcard-img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .6s; z-index: 1; }
     .vcard:hover .vcard-img img { transform: scale(1.05); }
     .vcard-img::after { content: ''; position: absolute; bottom: 0; inset-inline: 0; height: 3px; background: var(--y); z-index: 2; }
@@ -172,7 +172,7 @@
   <!-- INTRO -->
   <div class="fleet-intro">
     <div class="fleet-img">
-      <img src="fotky/vozovy-park.jpg" loading="lazy" alt="MECNER vozový park" onerror="this.style.display='none'"/>
+      <img src="fotky/vozovy-park.jpg" loading="lazy" alt="MECNER vozový park"/> onerror="this.style.display='none';var n=this.nextElementSibling;if(n)n.style.display='flex'"/>
       <div class="fleet-img-ph">🚚</div>
     </div>
     <div class="fleet-txt reveal">
@@ -194,7 +194,7 @@
     <div class="vgrid">
       <div class="vcard reveal">
         <div class="vcard-img">
-          <img src="fotky/scania-tahac.jpg" loading="lazy" alt="Scania R-Series" onerror="this.style.display='none'"/>
+          <img src="fotky/scania-tahac.jpg" loading="lazy" alt="Scania R-Series"/> onerror="this.style.display='none';var n=this.nextElementSibling;if(n)n.style.display='flex'"/>
           <div class="vcard-img-ph">🚛</div>
         </div>
         <div class="vcard-body">
@@ -210,7 +210,7 @@
       </div>
       <div class="vcard reveal">
         <div class="vcard-img">
-          <img src="fotky/klanicovy-naves.JPG" loading="lazy" alt="Klanicový návěs" onerror="this.style.display='none'"/>
+          <img src="fotky/klanicovy-naves.JPG" loading="lazy" alt="Klanicový návěs"/> onerror="this.style.display='none';var n=this.nextElementSibling;if(n)n.style.display='flex'"/>
           <div class="vcard-img-ph">🪵</div>
         </div>
         <div class="vcard-body">
@@ -226,7 +226,7 @@
       </div>
       <div class="vcard reveal">
         <div class="vcard-img">
-          <img src="fotky/sklapeci-naves.jpg" loading="lazy" alt="Sklápěcí návěs" onerror="this.style.display='none'"/>
+          <img src="fotky/sklapeci-naves.jpg" loading="lazy" alt="Sklápěcí návěs"/> onerror="this.style.display='none';var n=this.nextElementSibling;if(n)n.style.display='flex'"/>
           <div class="vcard-img-ph">⛏️</div>
         </div>
         <div class="vcard-body">

@@ -90,7 +90,7 @@
     .intro-img { position: relative; overflow: hidden; min-height: 520px; }
     .intro-img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .7s; }
     .intro-img:hover img { transform: scale(1.04); }
-    .intro-img-ph { position: absolute; inset: 0; background: var(--stone); display: flex; align-items: center; justify-content: center; font-size: 5rem; z-index: 0; }
+    .intro-img-ph { position: absolute; inset: 0; background: var(--stone); display: none; align-items: center; justify-content: center; font-size: 5rem; z-index: 0; }
     .intro-img img { z-index: 1; }
     .intro-img::after { content: ''; position: absolute; top: 0; right: 0; bottom: 0; width: 4px; background: var(--y); }
     .intro-txt { padding: 5.5rem 5vw; display: flex; flex-direction: column; justify-content: center; border-left: 2px solid var(--ink); border-top: 2px solid var(--ink); border-bottom: 2px solid var(--ink); }
@@ -170,7 +170,7 @@
   <!-- INTRO SPLIT -->
   <div class="intro">
     <div class="intro-img">
-      <img src="fotky/o-nas.JPG" loading="lazy" alt="MECNER – vozový park" onerror="this.style.display='none'"/>
+      <img src="fotky/o-nas.JPG" loading="lazy" alt="MECNER – vozový park"/> onerror="this.style.display='none';var n=this.nextElementSibling;if(n)n.style.display='flex'"/>
       <div class="intro-img-ph">🚛</div>
     </div>
     <div class="intro-txt reveal">

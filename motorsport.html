@@ -86,15 +86,15 @@
     .reveal.in { opacity: 1; transform: none; }
     @media (max-width: 860px) { .ph { grid-template-columns: 1fr; } .ph-l { border-right: none; padding-bottom: 2rem; } .ph-r { padding-top: 0; } }
     @media (max-width: 680px) { .nav-links { display: none; } .hamburger { display: flex; } footer { flex-direction: column; align-items: flex-start; } .fmeta { text-align: left; } }
-    .ms-hero { padding-top: var(--nav); background: var(--y); position: relative; overflow: hidden; min-height: 480px; display: flex; align-items: flex-end; padding-bottom: 0; }
+    .ms-hero { padding-top: var(--nav); background: var(--y); position: relative; overflow: hidden; min-height: 480px; display: flex; align-items: center; padding-bottom: 0; }
     .ms-hero::before { content: 'RACING'; position: absolute; inset: 0; display: flex; align-items: center; justify-content: flex-end; font-family: var(--fh); font-size: clamp(7rem,20vw,18rem); color: rgba(0,0,0,.07); padding-right: 3vw; pointer-events: none; white-space: nowrap; line-height: 1; }
-    .ms-hero-inner { padding: 5rem 6vw 0; display: grid; grid-template-columns: 1fr 1fr; gap: 6vw; align-items: flex-end; position: relative; z-index: 1; width: 100%; }
-    .ms-hero-txt { padding-bottom: 5rem; }
+    .ms-hero-inner { padding: 3rem 6vw; display: grid; grid-template-columns: 1fr 1fr; gap: 6vw; align-items: center; position: relative; z-index: 1; width: 100%; }
+    .ms-hero-txt { padding-bottom: 2rem; padding-top: 1rem; }
     .ms-hero-txt .sh { font-size: clamp(3rem,7vw,6rem); color: var(--ink); line-height: .88; margin-bottom: 1.2rem; }
     .ms-hero-txt p { color: rgba(17,17,16,.65); font-size: 1rem; line-height: 1.8; max-width: 420px; }
     .ms-hero-img { position: relative; overflow: hidden; border: 3px solid var(--ink); border-bottom: none; box-shadow: 10px 0 0 var(--ink); align-self: flex-end; }
     .ms-hero-img img { width: 100%; height: 100%; min-height: 340px; object-fit: cover; display: block; aspect-ratio: unset; }
-    .ms-hero-img-ph { position: absolute; inset: 0; background: rgba(0,0,0,.12); display: flex; align-items: center; justify-content: center; font-size: 6rem; z-index: 0; }
+    .ms-hero-img-ph { position: absolute; inset: 0; background: rgba(0,0,0,.12); display: none; align-items: center; justify-content: center; font-size: 6rem; z-index: 0; }
     .ms-hero-img img { position: relative; z-index: 1; }
     .ms-partner { padding: 6rem 6vw; background: var(--ink); display: grid; grid-template-columns: 1fr 1fr; gap: 6vw; align-items: center; }
     .ms-partner-txt .sh { color: var(--c); }
@@ -121,7 +121,7 @@
     .g-item:hover img { transform: scale(1.07); }
     .g-item::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,.4), transparent); opacity: 0; transition: opacity .3s; }
     .g-item:hover::after { opacity: 1; }
-    .g-item-ph { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-size: 3rem; color: rgba(255,255,255,.2); }
+    .g-item-ph { position: absolute; inset: 0; display: none; align-items: center; justify-content: center; font-size: 3rem; color: rgba(255,255,255,.2); }
     @media(max-width:960px) { .ms-hero-inner{grid-template-columns:1fr;} .ms-hero-img{display:none;} .ms-partner{grid-template-columns:1fr;} .ms-why-grid{grid-template-columns:1fr;} .gallery-grid{grid-template-columns:repeat(2,1fr);} .gallery-grid .g-item:first-child{grid-row:span 1;} }
 
     #scrolltop { position: fixed; bottom: 2rem; right: 2rem; width: 46px; height: 46px; background: var(--y); border: 2px solid var(--ink); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; font-weight: 700; z-index: 800; opacity: 0; transform: translateY(10px); transition: opacity .3s, transform .3s; pointer-events: none; line-height: 1; }
@@ -166,7 +166,7 @@
         <p>MECNER s.r.o. stojí za závodním týmem Lamont Racing. Sdílíme hodnoty rychlosti, přesnosti a vítězství – na silnici i na trati.</p>
       </div>
       <div class="ms-hero-img">
-        <img src="fotky/motorsport.jpg" loading="lazy" alt="Motorsport MECNER" onerror="this.style.display='none'"/>
+        <img src="fotky/motorsport.jpg" loading="lazy" alt="Motorsport MECNER"/> onerror="this.style.display='none';var n=this.nextElementSibling;if(n)n.style.display='flex'"/>
         <div class="ms-hero-img-ph">🏎️</div>
       </div>
     </div>
@@ -226,23 +226,23 @@
     </div>
     <div class="gallery-grid">
       <div class="g-item reveal">
-        <img src="fotky/motorsport-1.jpg" loading="lazy" alt="" onerror="this.style.display='none'"/>
+        <img src="fotky/motorsport-1.jpg" loading="lazy" alt=""/> onerror="this.style.display='none';var n=this.nextElementSibling;if(n)n.style.display='flex'"/>
         <div class="g-item-ph">📸</div>
       </div>
       <div class="g-item reveal">
-        <img src="fotky/motorsport-2.jpg" loading="lazy" alt="" onerror="this.style.display='none'"/>
+        <img src="fotky/motorsport-2.jpg" loading="lazy" alt=""/> onerror="this.style.display='none';var n=this.nextElementSibling;if(n)n.style.display='flex'"/>
         <div class="g-item-ph">📸</div>
       </div>
       <div class="g-item reveal">
-        <img src="fotky/motorsport-3.jpg" loading="lazy" alt="" onerror="this.style.display='none'"/>
+        <img src="fotky/motorsport-3.jpg" loading="lazy" alt=""/> onerror="this.style.display='none';var n=this.nextElementSibling;if(n)n.style.display='flex'"/>
         <div class="g-item-ph">📸</div>
       </div>
       <div class="g-item reveal">
-        <img src="fotky/motorsport-4.jpg" loading="lazy" alt="" onerror="this.style.display='none'"/>
+        <img src="fotky/motorsport-4.jpg" loading="lazy" alt=""/> onerror="this.style.display='none';var n=this.nextElementSibling;if(n)n.style.display='flex'"/>
         <div class="g-item-ph">📸</div>
       </div>
       <div class="g-item reveal">
-        <img src="fotky/motorsport-5.jpg" loading="lazy" alt="" onerror="this.style.display='none'"/>
+        <img src="fotky/motorsport-5.jpg" loading="lazy" alt=""/> onerror="this.style.display='none';var n=this.nextElementSibling;if(n)n.style.display='flex'"/>
         <div class="g-item-ph">📸</div>
       </div>
     </div>

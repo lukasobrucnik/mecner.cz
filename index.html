@@ -99,7 +99,7 @@
     .hero-r img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .7s ease; }
     .hero-r:hover img { transform: scale(1.04); }
     .hero-r::after { content: ''; position: absolute; bottom: 0; inset-inline: 0; height: 4px; background: var(--y); z-index: 2; }
-    .hero-r-ph { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-family: var(--fh); font-size: clamp(3rem,7vw,6rem); color: rgba(255,255,255,.04); letter-spacing: .1em; }
+    .hero-r-ph { position: absolute; inset: 0; display: none; align-items: center; justify-content: center; font-family: var(--fh); font-size: clamp(3rem,7vw,6rem); color: rgba(255,255,255,.04); letter-spacing: .1em; }
     /* STATS */
     .stats { grid-column: 1/-1; display: grid; grid-template-columns: repeat(4,1fr); background: var(--ink); border-top: 2px solid var(--ink); }
     .stat { padding: 1.9rem 2vw; border-right: 1px solid rgba(255,255,255,.07); text-align: center; transition: background .22s; position: relative; }
@@ -133,7 +133,7 @@
     .onas-img { position: relative; overflow: hidden; min-height: 480px; }
     .onas-img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .7s; }
     .onas-img:hover img { transform: scale(1.04); }
-    .onas-img-ph { position: absolute; inset: 0; background: var(--stone); display: flex; align-items: center; justify-content: center; font-size: 4rem; z-index: 0; }
+    .onas-img-ph { position: absolute; inset: 0; background: var(--stone); display: none; align-items: center; justify-content: center; font-size: 4rem; z-index: 0; }
     .onas-img img { z-index: 1; }
     .onas-img::after { content: ''; position: absolute; top: 0; right: 0; bottom: 0; width: 4px; background: var(--y); }
     .onas-txt { padding: 5.5rem 5vw; display: flex; flex-direction: column; justify-content: center; border-left: 2px solid var(--ink); border-top: 2px solid var(--ink); border-bottom: 2px solid var(--ink); }
@@ -153,7 +153,7 @@
     .partner-block .pn { font-family: var(--fh); font-size: 2.5rem; color: var(--ink); line-height: 1; }
     .moto-img { position: relative; aspect-ratio: 4/3; overflow: hidden; border: 2px solid var(--ink); box-shadow: 8px 8px 0 rgba(0,0,0,.15); }
     .moto-img img { width: 100%; height: 100%; object-fit: cover; }
-    .moto-img-ph { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-size: 4rem; background: rgba(0,0,0,.08); z-index: 0; }
+    .moto-img-ph { position: absolute; inset: 0; display: none; align-items: center; justify-content: center; font-size: 4rem; background: rgba(0,0,0,.08); z-index: 0; }
     .moto-img img { position: relative; z-index: 1; }
     /* RESPONSIVE */
     @media(max-width:960px) { .hero{grid-template-columns:1fr;} .hero-l{border-right:none;} .hero-r{min-height:300px;} .stats{grid-template-columns:repeat(2,1fr);} .srv-grid{grid-template-columns:1fr;} .srv-card{border-right:none;border-bottom:1px solid rgba(255,255,255,.07);} .srv-card:last-child{border-bottom:none;} #onas{grid-template-columns:1fr;} .onas-img{min-height:280px;} .onas-img::after{display:none;} .onas-txt{border-left:none;border-top:2px solid var(--ink);} .moto-inner{grid-template-columns:1fr;} }
@@ -206,7 +206,7 @@
       </div>
     </div>
     <div class="hero-r">
-      <img src="fotky/hero-truck.jpg" loading="lazy" alt="MECNER – tahač Scania" onerror="this.style.display='none'"/>
+      <img src="fotky/hero-truck.jpg" loading="lazy" alt="MECNER – tahač Scania"/> onerror="this.style.display='none';var n=this.nextElementSibling;if(n)n.style.display='flex'"/>
       <div class="hero-r-ph">SCANIA</div>
     </div>
     <div class="stats">
@@ -270,7 +270,7 @@
   <!-- O NÁS TEASER -->
   <div id="onas">
     <div class="onas-img">
-      <img src="fotky/o-nas.JPG" loading="lazy" alt="MECNER vozový park" onerror="this.style.display='none'"/>
+      <img src="fotky/o-nas.JPG" loading="lazy" alt="MECNER vozový park"/> onerror="this.style.display='none';var n=this.nextElementSibling;if(n)n.style.display='flex'"/>
       <div class="onas-img-ph">🚛</div>
     </div>
     <div class="onas-txt reveal">
@@ -305,7 +305,7 @@
         <a href="motorsport.html" class="btn btn-ink" style="align-self:flex-start;margin-top:2rem;">Více o motorsportu →</a>
       </div>
       <div class="moto-img reveal">
-        <img src="fotky/motorsport.jpg" loading="lazy" alt="Lamont Racing" onerror="this.style.display='none'"/>
+        <img src="fotky/motorsport.jpg" loading="lazy" alt="Lamont Racing"/> onerror="this.style.display='none';var n=this.nextElementSibling;if(n)n.style.display='flex'"/>
         <div class="moto-img-ph">🏎️</div>
       </div>
     </div>
@@ -349,6 +349,34 @@
     new IntersectionObserver((es)=>es.forEach((e,i)=>{if(e.isIntersecting)setTimeout(()=>e.target.classList.add('in'),i*85);}),{threshold:.07}).observe||(()=>{})();
     const io=new IntersectionObserver((es)=>es.forEach((e,i)=>{if(e.isIntersecting)setTimeout(()=>e.target.classList.add('in'),i*85);}),{threshold:.07});
     document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+    // Animated counters
+    (function() {
+      function animCount(el, to, suffix, dur) {
+        var from = (to === 2016) ? 2010 : 0;
+        var start = performance.now();
+        function tick(now) {
+          var p = Math.min((now - start) / dur, 1);
+          var ease = 1 - Math.pow(1 - p, 3);
+          el.textContent = Math.round(from + (to - from) * ease) + suffix;
+          if (p < 1) requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick);
+      }
+      var statsEl = document.querySelector('.stats');
+      if (!statsEl) return;
+      var triggered = false;
+      new IntersectionObserver(function(entries) {
+        entries.forEach(function(e) {
+          if (e.isIntersecting && !triggered) {
+            triggered = true;
+            statsEl.querySelectorAll('[data-n]').forEach(function(el) {
+              animCount(el, parseInt(el.dataset.n), el.dataset.s || '', 1600);
+            });
+          }
+        });
+      }, { threshold: 0.5 }).observe(statsEl);
+    })();
   </script>
 </body>
 </html>
